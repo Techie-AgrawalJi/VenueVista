@@ -1,7 +1,7 @@
 import dotenv from "dotenv/config.js";
 
 import express from "express";
-import mongoose from "mongoose";
+import mongoose, { mongo } from "mongoose";
 import path from "path";
 import { fileURLToPath } from "url";
 import methOver from "method-override";
@@ -12,7 +12,7 @@ import reviewRouter from "./routes/review.js";
 import userRouter from "./routes/user.js";
 import session from "express-session";
 import mongoStore from "connect-mongo";
-import connectFlash from "connect-flash";
+import flash from "connect-flash";
 
 import passport from "passport";
 import LocalStrategy from "passport-local";
@@ -35,7 +35,7 @@ const store = mongoStore.create({
   touchAfter: 24 * 3600,
 });
 
-store.on("error", (err) => {
+store.on("error", () => {
   console.log("error in mongo Store ", err);
 });
 const sessionOptions = {
@@ -50,9 +50,9 @@ const sessionOptions = {
   httpOnly: true, // used for security purposes
 };
 
-const flash = connectFlash();
+// const flash = connectFlash();
 app.use(session(sessionOptions));
-app.use(flash);
+app.use(flash());
 
 app.use(passport.initialize());
 app.use(passport.session());

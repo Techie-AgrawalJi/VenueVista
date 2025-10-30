@@ -2,6 +2,7 @@ import { Listing } from "../models/listing.js";
 
 import mbxGeocoding from "@mapbox/mapbox-sdk/services/geocoding.js";
 const mapToken = process.env.MAP_TOKEN;
+// console.log(mapToken);
 
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
