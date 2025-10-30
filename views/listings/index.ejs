@@ -1,0 +1,95 @@
+<% layout("/layouts/boilerplate") %>
+
+<!-- <h2>All Listings</h2> -->
+<!-- <form action="/listings/new" method="get">
+    <button class="add">Add New List</button>
+  </form> -->
+<div id="filters">
+  <div class="filter-types">
+    <div class="filter">
+      <i class="fa-solid fa-fire"></i>
+      <p>Trending</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-bed"></i>
+      <p>Rooms</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-mountain-city"></i>
+      <p>Iconic Cities</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-mountain"></i>
+      <p>Mountains</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-person-swimming"></i>
+      <p>Amazing Pools</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-chess-rook"></i>
+      <p>Castles</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-campground"></i>
+      <p>Camping</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-cow"></i>
+      <p>Farms</p>
+    </div>
+    <div class="filter">
+      <i class="fa-solid fa-snowflake"></i>
+      <p>Arctic</p>
+    </div>
+  </div>
+
+  <div class="tax-toggle">
+    <div class="form-check-reverse form-switch">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        role="switch"
+        id="switchCheckDefault"
+      />
+      <label class="form-check-label" for="switchCheckDefault">
+        Display total after taxes
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="listings-container">
+    <% for (const list of lists) { %>
+    <a href="/listings/<%= list._id %>">
+      <div class="card listing-card" style="width: 12rem">
+        <img
+          src="<%= list.image.url %>"
+          class="card-img-top"
+          alt="image"
+          style="height: 12rem"
+        />
+        <div class="card-body">
+          <h6 class="card-title"><%= list.title %></h6>
+          <p class="card-text">
+            &#8377;<%= list.price.toLocaleString() %>
+            <i class="tax-info">&nbsp;+18% GST</i>
+          </p>
+        </div>
+      </div>
+    </a>
+    <% } %>
+  </div>
+</div>
+
+<script>
+  let taxSwitch = document.getElementById("switchCheckDefault");
+  taxSwitch.addEventListener("click", () => {
+    let taxInfo = document.getElementsByClassName("tax-info");
+    for (info of taxInfo) {
+      if (info.style.display != "inline") info.style.display = "inline";
+      else info.style.display = "none";
+    }
+  });
+</script>

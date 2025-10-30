@@ -1,0 +1,119 @@
+body {
+  /* background-color: bisque; */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.container {
+  flex: 1;
+}
+/* Ensure navbar background stays visible even when expanded */
+.navbar {
+  background-color: #ffffff !important;
+  transition: background-color 0.3s ease-in-out;
+  z-index: 1030;
+}
+
+/* Keep collapse area solid white too */
+.navbar-collapse {
+  background-color: #ffffff !important;
+}
+
+/* Optional: add subtle shadow when expanded */
+.navbar.show,
+.navbar-collapse.show {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fa-compass {
+  font-size: 2rem;
+  color: rgb(227, 49, 5);
+}
+.nav-link {
+  color: #000 !important;
+}
+.f-info {
+  height: 5rem;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5px;
+}
+.f-info-socials {
+  font-size: 1.3rem;
+  display: flex;
+  gap: 10px;
+}
+.f-info-links {
+  display: flex;
+  gap: 10px;
+}
+.f-info-links a {
+  text-decoration: none;
+  color: black;
+}
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+/* cards */
+.listings-container {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  /* width: 100%; */
+}
+.row a {
+  text-decoration: none;
+}
+.listing-card {
+  border: none !important;
+  margin-bottom: 2rem;
+}
+
+.card-img-top {
+  border-radius: 1rem;
+  width: 100% !important;
+  object-fit: cover !important;
+}
+
+.card-body {
+  padding: 0 !important;
+}
+
+.card-text p {
+  font-weight: 400;
+}
+
+/* card effect */
+
+.card-img-overlay {
+  opacity: 0;
+}
+.card-img-overlay:hover {
+  opacity: 0.2;
+  background-color: #fff;
+}
+
+.add-btn,
+.edit-btn {
+  background-color: rgb(227, 49, 5) !important;
+  border: none !important;
+}
+
+#map {
+  border: 2px solid black;
+  height: 400px;
+  width: 600px;
+}
+
+@media screen and (orientation: portrait) {
+  #map {
+    height: 200px;
+    width: 400px;
+  }
+}
