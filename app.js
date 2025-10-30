@@ -15,7 +15,7 @@ import reviewRouter from "./routes/review.js";
 import userRouter from "./routes/user.js";
 import session from "express-session";
 import mongoStore from "connect-mongo";
-import flash from "connect-flash";
+import connectFlash from "connect-flash";
 
 import passport from "passport";
 import LocalStrategy from "passport-local";
@@ -53,7 +53,7 @@ const sessionOptions = {
   httpOnly: true, // used for security purposes
 };
 
-const flash = flash();
+const flash = connectFlash();
 app.use(session(sessionOptions));
 app.use(flash);
 
