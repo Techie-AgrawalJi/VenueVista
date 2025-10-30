@@ -1,11 +1,11 @@
 import { Listing } from "../models/listing.js";
 
 import mbxGeocoding from "@mapbox/mapbox-sdk/services/geocoding.js";
-const mapToken = process.env.MAP_TOKEN;
+const mapToken = process.env.MAPBOX_TOKEN;
 // console.log(mapToken);
 
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
-
+2
 const Listings = async (req, res) => {
   const allListings = await Listing.find({});
   res.render("listings/index.ejs", { lists: allListings });
