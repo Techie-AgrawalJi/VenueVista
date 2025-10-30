@@ -1,10 +1,7 @@
 import dotenv from "dotenv/config.js";
-// if (process.env.NODE_ENV != "production") {
-// dotenv.config();
-// }
 
 import express from "express";
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 import path from "path";
 import { fileURLToPath } from "url";
 import methOver from "method-override";
@@ -38,7 +35,7 @@ const store = mongoStore.create({
   touchAfter: 24 * 3600,
 });
 
-store.on("error", () => {
+store.on("error", (err) => {
   console.log("error in mongo Store ", err);
 });
 const sessionOptions = {
