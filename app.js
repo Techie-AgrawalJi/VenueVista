@@ -53,8 +53,9 @@ const sessionOptions = {
   httpOnly: true, // used for security purposes
 };
 
+const connectFlash = flash();
 app.use(session(sessionOptions));
-app.use(flash());
+app.use(connectFlash);
 
 app.use(passport.initialize());
 app.use(passport.session());
