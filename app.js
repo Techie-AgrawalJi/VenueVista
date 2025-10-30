@@ -111,12 +111,17 @@ app.use((req, res, next) => {
 // });
 
 // get all listings
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
+
 app.use("/listings", listingRouter);
 
 // Reviews
 app.use("/listings/:id/reviews", reviewRouter);
 
 app.use("/", userRouter);
+
 // if client sends request to any random page
 //  don't use "*" it will give path error use regex instead.
 app.all(/.*/, (req, res, next) => {
