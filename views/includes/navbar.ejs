@@ -1,45 +1,11 @@
-<style>
-  .btn-search {
-    background-color: #fe424d;
-    color: white;
-    border-radius: 25px;
-    padding: 0 1rem 0 1 rem;
-  }
-  .btn-search:hover {
-    background-color: #fe424d;
-    color: white;
-  }
-
-  .btn-search i {
-    display: inline;
-    margin-right: 0.5rem;
-  }
-
-  .search-inp {
-    border-radius: 25px;
-    padding: 0.5 rem 3 rem 0.5rem 3 rem;
-    font-size: 1rem;
-  }
-</style>
-
-<nav
-  class="navbar navbar-expand-md bg-light border-bottom sticky-top shadow-sm"
-  id="mainNavbar"
->
+<nav class="navbar navbar-expand-md bg-light border-bottom sticky-top py-1 shadow-sm" id="mainNavbar">
   <div class="container-fluid">
-    <a class="navbar-brand fs-3 text-danger" href="/listings">
-      <i class="fa-regular fa-compass"></i>
+    <a href="/images/venuevista.png">
+      <img src="/images/venuevista.png" alt="VenueVista Logo" style="height: 70px;" />
     </a>
 
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
-      aria-controls="navbarNavAltMarkup"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -49,12 +15,8 @@
       </div>
       <div class="navbar-nav ms-auto">
         <form class="d-flex" role="search">
-          <input
-            class="form-control me-2 search-inp"
-            type="search"
-            placeholder="Search destinations"
-            aria-label="Search"
-          />
+          <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations"
+            aria-label="Search" />
           <button class="btn btn-search" type="submit">
             <i class="fa-solid fa-magnifying-glass"></i>Search
           </button>
@@ -63,11 +25,12 @@
       <div class="navbar-nav ms-auto align-items-center">
         <a class="nav-link fw-semibold" href="/listings/new">Add your Venue</a>
         <% if(!currUser) { %>
-        <a class="nav-link fw-bold text-dark" href="/signup">SignUp</a>
-        <a class="nav-link fw-bold text-dark" href="/login">Login</a>
-        <% } %> <% if(currUser) { %>
-        <a class="nav-link fw-bold text-dark" href="/logout">Logout</a>
-        <% } %>
+          <a class="nav-link fw-bold text-dark" href="/signup">SignUp</a>
+          <a class="nav-link fw-bold text-dark" href="/login">Login</a>
+          <% } %>
+            <% if(currUser) { %>
+              <a class="nav-link fw-bold text-dark" href="/logout">Logout</a>
+              <% } %>
       </div>
     </div>
   </div>
