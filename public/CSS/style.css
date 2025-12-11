@@ -43,6 +43,10 @@ body {
   display: flex;
   gap: 10px;
 }
+.f-info-socials i:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+  transition: all 100ms ease-in;
+}
 .f-info-links {
   display: flex;
   gap: 10px;
@@ -51,8 +55,13 @@ body {
   text-decoration: none;
   color: black;
 }
+.projectName:hover {
+  color: rgb(1, 12, 160);
+  font-weight: 500;
+}
 .f-info-links a:hover {
-  text-decoration: underline;
+  font-weight: 500;
+  color: rgb(6, 1, 160);
 }
 
 .more {
@@ -125,9 +134,9 @@ body {
 
 /* card effect */
 .card:hover {
-  box-shadow:1px 1px 3px 3px rgb(230, 199, 152) ;
+  box-shadow: 1px 1px 3px 3px rgb(230, 199, 152);
   transform: scale3d(1.02, 1.02, 1.02);
-  transition: all 100ms ease-in allow-discrete ;
+  transition: all 100ms ease-in allow-discrete;
 }
 
 .add-btn,
