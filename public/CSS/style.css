@@ -12,6 +12,7 @@ body {
   background-color: #ffffff !important;
   transition: background-color 0.3s ease-in-out;
   z-index: 1030;
+  height: 60px;
 }
 
 /* Keep collapse area solid white too */
@@ -123,13 +124,10 @@ body {
 }
 
 /* card effect */
-
-.card-img-overlay {
-  opacity: 0;
-}
-.card-img-overlay:hover {
-  opacity: 0.2;
-  background-color: #fff;
+.card:hover {
+  box-shadow:1px 1px 3px 3px rgb(230, 199, 152) ;
+  transform: scale3d(1.02, 1.02, 1.02);
+  transition: all 100ms ease-in allow-discrete ;
 }
 
 .add-btn,
