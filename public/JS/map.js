@@ -1,4 +1,4 @@
-mapboxgl.accessToken = mapToken;
+mapboxgl.accessToken = MAPBOX_TOKEN;
 const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/standard", // Use the standard style for the map

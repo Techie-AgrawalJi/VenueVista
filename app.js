@@ -50,6 +50,8 @@ const sessionOptions = {
   httpOnly: true, // used for security purposes
 };
 
+app.locals.mapboxToken = process.env.MAPBOX_TOKEN;
+
 // const flash = connectFlash();
 app.use(session(sessionOptions));
 app.use(flash());
@@ -109,7 +111,6 @@ app.use((req, res, next) => {
 //   let registeredUser = await User.register(fakeUser, "helloJay"); // register- static method which takes user, password and callback as arguments but here we have not passed cb, it will auto check unique username is DB.
 //   res.send(registeredUser);
 // });
-
 // get all listings
 app.get("/", (req, res) => {
   res.redirect("/listings");
