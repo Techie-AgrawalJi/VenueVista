@@ -1,0 +1,121 @@
+@media (max-width: 768px) {
+  #filters {
+    padding: 8px 12px;
+    height: 65px;
+  }
+
+  .filter-types {
+    gap: 18px;
+  }
+
+  .filter p {
+    font-size: 12px;
+  }
+}
+@media (max-width: 400px) {
+  #filters {
+    flex-direction: column; /* stack vertically */
+    align-items: flex-start; /* align left */
+    height: auto; /* allow full height */
+    gap: 8px; /* add some spacing between rows */
+  }
+
+  .filter-types {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .tax-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 0;
+  }
+}
+
+.tax-info {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .listing-container {
+    width: 90%;
+  }
+
+  .review-card {
+    flex: 1 1 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .btn-dark,
+  .btn-outline {
+    width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .listing-container {
+    width: 90%;
+    padding: 0;
+  }
+
+  .listing-title {
+    font-size: 1.5rem;
+  }
+
+  .listing-image {
+    height: 220px;
+  }
+
+  #map {
+    height: 250px;
+    width: 90%;
+  }
+
+  .review-card,
+  .listing-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .listing-container {
+    width: 90%;
+  }
+  .card {
+    width: 8rem !important;
+    height: 12rem !important;
+  }
+  .card img {
+    height: 60% !important;
+  }
+  #map,
+  .reviews-section,
+  .listing-details {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .listing-title {
+    font-size: 1.3rem;
+  }
+
+  .review-card {
+    width: 90%;
+  }
+  #mainNavbar {
+    height: 3.5rem;
+  }
+  .logo {
+    height: 50px !important;
+  }
+}

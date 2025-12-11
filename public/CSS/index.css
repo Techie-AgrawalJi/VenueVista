@@ -1,94 +1,58 @@
-  /* Filters container */
-  #filters {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #fff;
-    /* border-bottom: 1px solid #ddd; */
-    padding: 10px 20px;
-    margin: 0 auto;
-    margin-top: 10px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    overflow: hidden;
-    height: 70px; /* Fixed height */
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    padding: 8px 12px;
-    background-color: #fafafa;
-  }
+/* Filters container */
+#filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px 20px;
+  margin: 0 auto;
+  margin-top: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  overflow: hidden;
+  height: 70px; /* Fixed height */
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 8px 12px;
+  background-color: #fafafa;
+}
 
-  /* Filter types section */
-  .filter-types {
-    display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping */
-    gap: 25px;
-    overflow-x: auto; /* Horizontal scroll if too many filters */
-    /* scrollbar-width: none; Hide scrollbar (Firefox) */
-    /* -ms-overflow-style: none; Hide scrollbar (IE) */
-  }
+/* Filter types section */
+.filter-types {
+  display: flex;
+  flex-wrap: nowrap; /* Prevent wrapping */
+  gap: 25px;
+  padding-top: 10px;
+  overflow-x: auto; /* Horizontal scroll if too many filters */
+  scrollbar-width: thin; /*Hide scrollbar (Firefox)*/
+}
 
-  /* Individual filter items */
-  .filter {
-    flex: 0 0 auto; /* Prevent shrinking */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 13px;
-    cursor: pointer;
-    color: #333;
-    transition: color 0.3s ease;
-  }
+/* Individual filter items */
+.filter {
+  flex: 0 0 auto; /* Prevent shrinking */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
 
-  .filter:hover {
-    color: #e63946;
-  }
+.filter:hover {
+  color: #e63946;
+}
 
-  /* Toggle section always visible on right */
-  .tax-toggle {
-    flex-shrink: 0;
-    margin-left: 15px;
-    white-space: nowrap;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    padding: 8px 12px;
-    background-color: #fafafa;
-  }
+/* Toggle section always visible on right */
+.tax-toggle {
+  flex-shrink: 0;
+  margin-left: 15px;
+  white-space: nowrap;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 8px 12px;
+  background-color: #fafafa;
+}
 
-  /* Responsive tweaks for small screens */
-  @media (max-width: 768px) {
-    #filters {
-      padding: 8px 12px;
-      height: 65px;
-    }
-
-    .filter-types {
-      gap: 18px;
-    }
-
-    .filter p {
-      font-size: 12px;
-    }
-  }
-  @media (max-width: 385px) {
-    #filters {
-      flex-direction: column; /* stack vertically */
-      align-items: flex-start; /* align left */
-      height: auto; /* allow full height */
-      gap: 8px; /* add some spacing between rows */
-    }
-
-    .filter-types {
-      width: 100%;
-      justify-content: flex-start;
-      overflow-x: auto;
-    }
-
-    .tax-toggle {
-      width: 100%;
-      display: flex;
-      justify-content: flex-start;
-      margin-left: 0;
-    }
-  }
+/* Responsive tweaks for small screens */

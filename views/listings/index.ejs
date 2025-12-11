@@ -53,11 +53,13 @@
         id="switchCheckDefault"
       />
       <label class="form-check-label" for="switchCheckDefault">
-        Display total after taxes
+        Total Price
       </label>
     </div>
   </div>
 </div>
+
+<p class="note">&ast;<i>Note</i>:Price reflect the average rates of nearby hotels. </p>
 
 <div class="row">
   <div class="listings-container">
@@ -81,15 +83,41 @@
     </a>
     <% } %>
   </div>
+  <p class="more">A lot to be Added Soon...</p>
 </div>
 
-<script>
+<!-- <script>
   let taxSwitch = document.getElementById("switchCheckDefault");
   taxSwitch.addEventListener("click", () => {
     let taxInfo = document.getElementsByClassName("tax-info");
     for (info of taxInfo) {
       if (info.style.display != "inline") info.style.display = "inline";
       else info.style.display = "none";
+    }
+  });
+</script> -->
+
+<script>
+  // Get the switch
+  let taxSwitch = document.getElementById("switchCheckDefault");
+
+  // Listen for a "change" event (more reliable than "click")
+  taxSwitch.addEventListener("change", function() {
+    
+    // Get all the tax elements
+    let allTaxInfo = document.getElementsByClassName("tax-info");
+
+    // Check if the switch is now ON
+    if (this.checked) {
+      // Switch is ON: Show all tax elements
+      for (let info of allTaxInfo) {
+        info.style.display = "inline";
+      }
+    } else {
+      // Switch is OFF: Hide all tax elements
+      for (let info of allTaxInfo) {
+        info.style.display = "none";
+      }
     }
   });
 </script>
