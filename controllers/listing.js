@@ -58,6 +58,7 @@ const newListing = async (req, res) => {
 const editListingForm = async (req, res) => {
   let { id } = req.params;
   let list = await Listing.findById(id);
+  console.log(list.category);
   if (!list) {
     req.flash("error", "Listing you requested for does not exist!");
     res.redirect("/listings");

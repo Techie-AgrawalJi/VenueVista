@@ -1,83 +1,72 @@
 <% layout("layouts/boilerplate.ejs") %>
-<div class="row">
-  <div class="col-md-8 offset-2">
-    <h1>Edit this list</h1>
-    <form
-      action="/listings/<%=list._id%>?_method=put"
-      method="post"
-      enctype="multipart/form-data"
-      novalidate
-      class="needs-validation"
-    >
-      <div class="mb-3">
-        <label for="title" class="form-label">Title</label>
-        <input
-          class="form-control"
-          type="text"
-          name="title"
-          value="<%=list.title%>"
-          required
-        />
-        <div class="invalid-feedback">Title is required!</div>
-      </div>
-      <div class="mb-3">
-        <label for="description" class="form-label">Description</label>
-        <textarea
-          class="form-control"
-          type="text"
-          name="description"
-          value="<%=list.description%>"
-          required
-        ></textarea>
-        <div class="invalid-feedback">Description is required!</div>
-      </div>
-      <div class="mb-3">
-        Original Image <br />
-        <img src="<%=orgImgUrl%>" />
-      </div>
-      <div class="mb-3">
-        <label for="image" class="form-label">Upload New Image </label>
-        <input class="form-control" type="file" name="image" />
-      </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="mb-3">
-            <label for="price" class="form-label">Price</label>
-            <input
-              class="form-control"
-              name="price"
-              value="<%=list.price%>"
-              required
-            />
-            <div class="invalid-feedback">Price is required!</div>
+  <div class="row">
+    <div class="col-md-8 offset-2">
+      <h1>Edit this list</h1>
+      <form action="/listings/<%=list._id%>?_method=put" method="post" enctype="multipart/form-data" novalidate
+        class="needs-validation">
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input class="form-control" type="text" name="title" value="<%=list.title%>" required />
+          <div class="invalid-feedback">Title is required!</div>
+        </div>
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea class="form-control" type="text" name="description" required><%=list.description%></textarea>
+          <div class="invalid-feedback">Description is required!</div>
+        </div>
+        <div class="mb-3">
+          Original Image <br />
+          <img src="<%=orgImgUrl%>" />
+        </div>
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload New Image </label>
+          <input class="form-control" type="file" name="image" />
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="mb-3">
+              <label for="price" class="form-label">Price</label>
+              <input class="form-control" type="number" name="price" value="<%= list.price %>" required />
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="mb-3 select">
+              <label for="category" >Category</label>
+              <br>
+              <select name="category" required>
+                <option value="">Select category</option>
+                <option value="mountains">Mountains</option>
+                <option value="trending">Trending</option>
+                <option value="beaches">Beaches</option>
+                <option value="spiritual">Spiritual</option>
+                <option value="heritage">Heritage</option>
+                <option value="swimming-pools">Swimming Pools</option>
+                <option value="lakes">lakes</option>
+                <option value="cities">Cities</option>
+                <option value="camping">Camping</option>
+                <option value="farms">Farms</option>
+                <option value="Arctic">Arctic</option>
+                <option value="desert">Desert</option>
+              </select>
+            </div>
           </div>
         </div>
-        <div class="col-md-8">
-          <div class="mb-3">
-            <label for="country" class="form-label">Country</label>
-            <input
-              class="form-control"
-              type="text"
-              name="country"
-              value="<%=list.country%>"
-              required
-            />
-            <div class="invalid-feedback">Country is required!</div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="price" class="form-label">Location</label>
+              <input class="form-control" type="text" name="location" value="<%= list.location %>" required />
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <label for="country" class="form-label">Country</label>
+              <input class="form-control" type="text" name="country" value="<%= list.country %>" required />
+              <div class="invalid-feedback">Country is required!</div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="mb-3">
-        <label for="location" class="form-label">Location</label>
-        <input
-          class="form-control"
-          type="text"
-          name="location"
-          value="<%=list.location%>"
-          required
-        />
-        <div class="invalid-feedback">Location is required!</div>
-      </div>
-      <button type="submit" class="btn btn-dark edit-btn mt-3">Edit</button>
-    </form>
+        <button type="submit" class="btn btn-dark edit-btn mt-3">Edit</button>
+      </form>
+    </div>
   </div>
-</div>
