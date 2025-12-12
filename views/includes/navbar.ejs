@@ -3,6 +3,7 @@
     <a href="/images/venuevista.png">
       <img class="logo" src="/images/venuevista.png" alt="VenueVista Logo" style="height: 55px;" />
     </a>
+    <a href="/listings" class="effect home">Home</a>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,18 +19,18 @@
           <input class="form-control me-2 search-inp" type="search" placeholder="Search destinations"
             aria-label="Search" />
           <button class="btn btn-search" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>Search
+            <i class="fa-solid fa-magnifying-glass "></i>Search
           </button>
         </form>
       </div>
       <div class="navbar-nav ms-auto align-items-center">
-        <a class="nav-link fw-semibold" href="/listings/new">Add your Venue</a>
+        <a class="nav-link fw-semibold effect" href="/listings/new">Add a Venue</a>
         <% if(!currUser) { %>
-          <a class="nav-link fw-bold text-dark" href="/signup">SignUp</a>
-          <a class="nav-link fw-bold text-dark" href="/login">Login</a>
+          <a class="nav-link fw-bold text-dark effect" href="/signup">SignUp</a>
+          <a class="nav-link fw-bold text-dark effect" href="/login">Login</a>
           <% } %>
             <% if(currUser) { %>
-              <a class="nav-link fw-bold text-dark" href="/logout">Logout</a>
+              <a class="nav-link fw-bold text-dark effect" href="/logout">Logout</a>
               <% } %>
       </div>
     </div>
