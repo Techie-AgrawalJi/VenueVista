@@ -44,6 +44,13 @@
     justify-content: space-around;
     margin-left: 0;
   }
+  .login-main{
+    max-width: 95vw !important;
+  }
+  .login-form{
+    width: 100% !important;
+
+  }
 }
 
 .tax-info {
@@ -86,6 +93,12 @@
   .listing-card {
     width: 90%;
     margin: 0 auto;
+  }
+
+  .f-info{
+    flex-direction: column;
+    gap: 1.5px;
+    height: 5rem;
   }
 }
 

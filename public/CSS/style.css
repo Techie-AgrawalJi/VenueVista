@@ -40,13 +40,12 @@ body {
   border: 2px solid #3a9297;
 }
 .f-info {
-  height: 5rem;
+  height: 4rem;
   background-color: lightgray;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.5px;
+  gap: 50px;
 }
 .f-info-socials {
   font-size: 1.3rem;
@@ -81,7 +80,7 @@ body {
 .note {
   max-width: 70vw;
   margin: 0 auto;
-  color: rgb(180, 4, 4);
+  color: rgb(116, 11, 11);
   text-align: center;
   font-weight: 500;
 }
@@ -390,6 +389,9 @@ body {
   justify-self: center;
   background-color: #3a9297;
   color: white;
+  width: 5rem;
+  justify-content: center;
+  font-size: 18px;
 }
 .login-btn:hover{
   background-color: #5fd6dc;
@@ -404,7 +406,12 @@ body {
 .login-form {
   margin: auto;
   width: 90%;
+}
 
+.new-main{
+ display: flex;
+ margin: auto;
+ justify-content: center;
 }
 
 .new-form{
