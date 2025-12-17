@@ -1,5 +1,5 @@
 .effect:hover {
-  color: rgb(241, 23, 23);
+  color: rgb(64, 128, 130);
   transform: scale3d(1.02, 1.02, 1.02);
-  transition: all 100ms ease-in allow-discrete;
+  transition: all 0 ease-in allow-discrete;
 }

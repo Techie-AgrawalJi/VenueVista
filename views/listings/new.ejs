@@ -1,7 +1,7 @@
 <% layout("layouts/boilerplate.ejs") %>
   <div class="row">
-    <div class="col-md-8 offset-2">
-      <h1>Create a new Venue</h1>
+    <div class="col-md-8 offset-2 new-form">
+      <h1 class="login-heading">Create a new Venue</h1>
       <form action="/listings" method="post" enctype="multipart/form-data" novalidate class="needs-validation">
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
@@ -65,7 +65,7 @@
         </div>
 
 
-        <button type="submit" class="btn btn-dark add-btn mt-3">Add</button>
+        <button type="submit" class="btn add-btn mt-3 login-btn">Add</button>
       </form>
     </div>
   </div>

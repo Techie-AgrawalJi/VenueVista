@@ -2,6 +2,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: #609a9d;
 }
 .container {
   flex: 1;
@@ -27,6 +28,7 @@ body {
 }
 
 .home {
+  padding-left: 10px;
   text-decoration: none;
   color: black;
 }
@@ -35,7 +37,7 @@ body {
 }
 
 .search-inp:hover {
-  border: 2px solid rgb(245, 109, 109);
+  border: 2px solid #3a9297;
 }
 .f-info {
   height: 5rem;
@@ -64,12 +66,12 @@ body {
   color: black;
 }
 .projectName:hover {
-  color: rgb(1, 12, 160);
+  color: rgb(65, 124, 141);
   font-weight: 500;
 }
 .f-info-links a:hover {
   font-weight: 500;
-  color: rgb(6, 1, 160);
+  color: rgb(65, 124, 141);
 }
 
 .more {
@@ -79,18 +81,19 @@ body {
 .note {
   max-width: 70vw;
   margin: 0 auto;
-  color: red;
+  color: rgb(180, 4, 4);
   text-align: center;
+  font-weight: 500;
 }
 
 .btn-search {
-  background-color: #fe424d;
+  background-color: #3a9297;
   color: white;
   border-radius: 25px;
   padding: 0 1rem 0 1 rem;
 }
 .btn-search:hover {
-  background-color: #fe424d;
+  background-color: #48b5bb;
   color: white;
 }
 
@@ -112,9 +115,11 @@ body {
   justify-content: center;
   gap: 1.5rem;
 }
+
 .row a {
   text-decoration: none;
 }
+
 .listing-card {
   border: none !important;
   margin-bottom: 2rem;
@@ -127,7 +132,8 @@ body {
 }
 
 .card-body {
-  padding: 0 !important;
+  padding: 5px 0 5px 5px !important;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -138,7 +144,7 @@ body {
 }
 
 .card:hover {
-  box-shadow: 1px 1px 3px 3px rgb(237, 138, 138);
+  box-shadow: 1px 1px 3px 3px #77ecf3;
 }
 
 .listing-container {
@@ -161,8 +167,12 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   margin-bottom: 20px;
+  transition: all 0.3s ease-out allow-discrete;
 }
 
+.listing-card:hover {
+  transform: scale3d(1.03, 1.03, 1.03);
+}
 .listing-image {
   width: 100%;
   height: 300px;
@@ -325,7 +335,7 @@ body {
 }
 
 .filter:hover {
-  color: #e63946;
+  color: #3a9297;
 }
 
 .tax-toggle {
@@ -361,4 +371,46 @@ body {
 
 .select select option {
   padding: 8px;
+}
+
+.login-main {
+  border: 5px solid rgb(136, 219, 222);
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+  max-width: 70vw;
+  margin: auto;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-btn {
+  display: flex;
+  justify-self: center;
+  background-color: #3a9297;
+  color: white;
+}
+.login-btn:hover{
+  background-color: #5fd6dc;
+  
+}
+
+.login-heading {
+  text-align: center;
+  color: #0d5a5e;
+}
+
+.login-form {
+  margin: auto;
+  width: 90%;
+
+}
+
+.new-form{
+  border: 5px solid rgb(136, 219, 222);
+  background-color: white;
+  border-radius: 15px;
+  padding: 15px;
+  margin-top:5px;
 }
