@@ -1,8 +1,5 @@
 import express, { Router } from "express";
 import { wrapAsync } from "../utils/wrapAsync.js";
-import { listingSchema } from "../schema.js";
-import { ExpressError } from "../utils/expressError.js";
-import { Listing } from "../models/listing.js";
 import { isLoggedIn, isOwner, validateListing } from "../middleware.js";
 import controller from "../controllers/listing.js";
 import multer from "multer";

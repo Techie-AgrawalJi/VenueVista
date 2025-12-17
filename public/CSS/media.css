@@ -9,7 +9,6 @@
 }
 @media (max-width: 768px) {
   .listing-container {
-    
   }
   #filters {
     padding: 8px 12px;
@@ -22,6 +21,14 @@
 
   .filter p {
     font-size: 12px;
+  }
+}
+@media screen and (max-width: 650px) {
+  .login-main {
+    max-width: 90vw !important;
+  }
+  .login-form {
+    width: 100% !important;
   }
 }
 @media (max-width: 400px) {
@@ -44,12 +51,11 @@
     justify-content: space-around;
     margin-left: 0;
   }
-  .login-main{
+  .login-main {
     max-width: 95vw !important;
   }
-  .login-form{
+  .login-form {
     width: 100% !important;
-
   }
 }
 
@@ -95,7 +101,7 @@
     margin: 0 auto;
   }
 
-  .f-info{
+  .f-info {
     flex-direction: column;
     gap: 1.5px;
     height: 5rem;

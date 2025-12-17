@@ -38,7 +38,6 @@ const listingSchema = new Schema({
     type: String,
     enum: ["trending", "cities", "mountains", "swimming-pools", "camping", "farms", " arctic", "beaches",
       "heritage", "lakes", "desert", "spiritual"],
-    label: ["Trending", "Cities", "Mountains", "Swimming Pools", "Camping", "Farms", " Arctic", "Beaches","Heritage","Lakes","Desert", "Spiritual"],
   },
 });
 

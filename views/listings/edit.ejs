@@ -1,7 +1,7 @@
 <% layout("layouts/boilerplate.ejs") %>
-  <div class="row">
-    <div class="col-md-8 offset-2">
-      <h1>Edit this list</h1>
+  <div class="login-main">
+    <div class=" login-form">
+      <h1 class="login-heading">Edit this Venue</h1>
       <form action="/listings/<%=list._id%>?_method=put" method="post" enctype="multipart/form-data" novalidate
         class="needs-validation">
         <div class="mb-3">
@@ -30,24 +30,35 @@
             </div>
           </div>
           <div class="col-md-8">
-            <div class="mb-3 select">
-              <label for="category" >Category</label>
-              <br>
-              <select name="category" required>
-                <option value="">Select category</option>
-                <option value="mountains">Mountains</option>
-                <option value="trending">Trending</option>
-                <option value="beaches">Beaches</option>
-                <option value="spiritual">Spiritual</option>
-                <option value="heritage">Heritage</option>
-                <option value="swimming-pools">Swimming Pools</option>
-                <option value="lakes">lakes</option>
-                <option value="cities">Cities</option>
-                <option value="camping">Camping</option>
-                <option value="farms">Farms</option>
-                <option value="Arctic">Arctic</option>
-                <option value="desert">Desert</option>
-              </select>
+            <div class="mb-3 ">
+              <label for="category" class="form-label">Category</label>
+              <div class="inp-category">
+                <input class="form-control" type="text" name="category" placeholder="Category" />
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  i
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                  aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Available Categories</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        trending, cities, mountains, swimming-pools, camping, farms, arctic, beaches,
+                        heritage, lakes, desert, spiritual
+                        <br>
+                        <i style="color: red;">You can have at most three categories</i>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -66,7 +77,7 @@
             </div>
           </div>
         </div>
-        <button type="submit" class="btn btn-dark edit-btn mt-3">Edit</button>
+        <button type="submit" class="btn btn-dark edit-btn mt-3 login-btn">Edit</button>
       </form>
     </div>
   </div>
