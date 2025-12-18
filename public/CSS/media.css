@@ -39,6 +39,10 @@
     gap: 8px; /* add some spacing between rows */
   }
 
+  #filters {
+    position: relative;
+  }
+
   .filter-types {
     width: 100%;
     justify-content: flex-start;

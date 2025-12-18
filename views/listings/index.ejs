@@ -30,7 +30,7 @@
         <i class="fa-solid fa-mountain-city"></i>
         <p>Iconic Cities</p>
       </div>
-      
+
       <div class="filter" data-category="swimming-pools">
         <i class="fa-solid fa-person-swimming"></i>
         <p>Swimming Pools</p>
@@ -51,12 +51,12 @@
         <i class="fa-solid fa-book-bible"></i>
         <p>Spiritual</p>
       </div>
-      
+
       <div class="filter" data-category="desert">
         <i class="fa-solid fa-mountain-sun"></i>
         <p>Desert</p>
       </div>
-      
+
     </div>
 
     <div class="tax-toggle">
@@ -134,6 +134,15 @@
         window.location.href = `/listings?category=${category}`;
       });
     });
+    
+    let inp = document.querySelector(".search-inp")
+    let form = document.querySelector(".search-form");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
+      const location = inp.value.trim();
+      // if (!location) return;
+      window.location.href = `/listings?location=${location}`
+    })
 
   </script>

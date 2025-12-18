@@ -7,15 +7,16 @@ const mapToken = process.env.MAPBOX_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 2
 const Listings = async (req, res) => {
-
-  const { category } = req.query;
-
+  const { category, location } = req.query;
   let allListings;
 
   if (category) {
     allListings = await Listing.find({ category: category })
+  } else if (location) {
+    allListings = await Listing.find({
+      location: { $regex: location, $options: "i" } // case-insensitive
+    });
   } else {
-
     allListings = await Listing.find({});
   }
 

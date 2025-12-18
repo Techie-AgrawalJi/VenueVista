@@ -8,7 +8,7 @@ body {
   flex: 1;
 }
 .navbar {
-  background-color: #ffffff !important;
+  background-color: #fff !important;
   transition: background-color 0.3s ease-in-out;
   z-index: 1030;
   height: 60px;
@@ -311,7 +311,7 @@ body {
   margin: 0 auto;
   margin-top: 10px;
   position: sticky;
-  top: 0;
+  top: 60px;
   z-index: 1000;
   overflow: hidden;
   height: 70px;
