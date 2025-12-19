@@ -8,6 +8,9 @@
   }
 }
 @media (max-width: 768px) {
+  .search-bar {
+    margin: 5px !important;
+  }
   .listing-container {
   }
   #filters {
@@ -37,10 +40,7 @@
     align-items: flex-start; /* align left */
     height: auto; /* allow full height */
     gap: 8px; /* add some spacing between rows */
-  }
-
-  #filters {
-    position: relative;
+    top: 56px !important;
   }
 
   .filter-types {
