@@ -11,8 +11,7 @@
   .search-bar {
     margin: 5px !important;
   }
-  .listing-container {
-  }
+
   #filters {
     padding: 8px 12px;
     height: 65px;
@@ -33,38 +32,6 @@
   .login-form {
     width: 100% !important;
   }
-}
-@media (max-width: 400px) {
-  #filters {
-    flex-direction: column; /* stack vertically */
-    align-items: flex-start; /* align left */
-    height: auto; /* allow full height */
-    gap: 8px; /* add some spacing between rows */
-    top: 56px !important;
-  }
-
-  .filter-types {
-    width: 100%;
-    justify-content: flex-start;
-    overflow-x: auto;
-  }
-
-  .tax-toggle {
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    margin-left: 0;
-  }
-  .login-main {
-    max-width: 95vw !important;
-  }
-  .login-form {
-    width: 100% !important;
-  }
-}
-
-.tax-info {
-  display: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -114,7 +81,7 @@
 
 @media screen and (max-width: 425px) {
   .listing-container {
-    width: 90%;
+    width: 100% !important;
   }
   .card {
     width: 8rem !important;
@@ -126,8 +93,7 @@
   #map,
   .reviews-section,
   .listing-details {
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
   }
 
   .listing-title {
@@ -143,4 +109,37 @@
   .logo {
     height: 50px !important;
   }
+}
+
+@media (max-width: 400px) {
+  #filters {
+    flex-direction: column; /* stack vertically */
+    align-items: flex-start; /* align left */
+    height: auto; /* allow full height */
+    gap: 8px; /* add some spacing between rows */
+    top: 56px !important;
+  }
+
+  .filter-types {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .tax-toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-left: 0;
+  }
+  .login-main {
+    max-width: 95vw !important;
+  }
+  .login-form {
+    width: 100% !important;
+  }
+}
+
+.tax-info {
+  display: none;
 }

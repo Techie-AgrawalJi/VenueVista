@@ -138,14 +138,18 @@ body {
   font-weight: 400;
 }
 
-.card {
-}
-
 .listing-container {
   max-width: 800px;
   margin: 30px auto;
   padding: 0 20px;
   font-family: "Poppins", sans-serif;
+}
+.textShadow {
+  text-shadow:
+    1px 1px 0 #94e4e0,
+    2px 2px 0 #5aa4a9,
+    3px 3px 0 #336866,
+    5px 5px 10px rgba(0,0,0,0.6);
 }
 
 .listing-title {

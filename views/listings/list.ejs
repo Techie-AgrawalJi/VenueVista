@@ -1,20 +1,20 @@
 <% layout("layouts/boilerplate.ejs") %>
   <script>
-    const coordinates = <%- JSON.stringify(list.geometry.coordinates) %>;
+    const coordinates = <% - JSON.stringify(list.geometry.coordinates) %>;
   </script>
 
   <!-- Main Listing Container -->
   <div class="listing-container">
     <!-- Listing Header -->
     <div class="listing-header">
-      <h2 class="listing-title">
+      <h2 class="listing-title textShadow">
         <%= list.title %>
       </h2>
     </div>
 
     <!-- Listing Details -->
     <div class="listing-details">
-      <div class=" listing-card">
+      <div class="listing-card list-card">
         <img src="<%= list.image.url %>" alt="list_image" class="listing-image" />
         <div class="listing-body">
           <% if (list.owner) { %>
@@ -45,7 +45,7 @@
     <% if (currUser) { %>
       <div class="review-form">
         <hr />
-        <h3>Leave a Review</h3>
+        <h3 class="textShadow">Leave a Review</h3>
         <form action="/listings/<%= list.id %>/reviews" method="post" novalidate class="review-form-inner">
           <label for="rating">Rating</label>
           <fieldset class="starability-slot">
@@ -73,7 +73,7 @@
         <div class="reviews-section">
           <hr />
           <% if (list.reviews.length> 0) { %>
-            <h3>All Reviews</h3>
+            <h3 class="textShadow">All Reviews</h3>
             <div class="review-list">
               <% for (let review of list.reviews) { %>
                 <div class="review-card">
@@ -98,7 +98,7 @@
 
         <!-- Map Section -->
         <div class="map-section">
-          <h3>Where you'll be</h3>
+          <h3 class="textShadow">Where you'll be</h3>
           <div id="map"></div>
         </div>
   </div>
