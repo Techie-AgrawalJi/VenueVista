@@ -33,8 +33,8 @@
 
       <% if (currUser && list.owner && currUser._id.equals(list.owner._id)) { %>
         <div class="button-group">
-          <a href="/listings/<%= list.id %>/edit" class="btn-dark">Edit</a>
-          <form action="/listings/<%= list._id %>?_method=delete" method="post">
+          <a href="/venues/<%= list.id %>/edit" class="btn-dark">Edit</a>
+          <form action="/venues/<%= list._id %>?_method=delete" method="post">
             <button type="submit" class="btn-dark">Delete</button>
           </form>
         </div>
@@ -46,7 +46,7 @@
       <div class="review-form">
         <hr />
         <h3 class="textShadow">Leave a Review</h3>
-        <form action="/listings/<%= list.id %>/reviews" method="post" novalidate class="review-form-inner">
+        <form action="/venues/<%= list.id %>/reviews" method="post" novalidate class="review-form-inner">
           <label for="rating">Rating</label>
           <fieldset class="starability-slot">
             <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="0" checked />
@@ -85,7 +85,7 @@
                         <%= review.comment %>
                       </p>
                       <p class="starability-result" data-rating="<%= review.rating %>"></p>
-                      <form action="/listings/<%= list._id %>/reviews/<%= review._id %>?_method=DELETE" method="post">
+                      <form action="/venues/<%= list._id %>/reviews/<%= review._id %>?_method=DELETE" method="post">
                         <button class="btn-dark btn-small">Delete</button>
                       </form>
                 </div>

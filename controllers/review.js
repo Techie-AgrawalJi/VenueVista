@@ -9,7 +9,7 @@ const createReview = async (req, res) => {
   await newReview.save();
   await listing.save();
   req.flash("success", "Review Added!");
-  res.redirect(`/listings/${listing._id}`);
+  res.redirect(`/venues/${listing._id}`);
 };
 
 const deleteReview = async (req, res) => {
@@ -18,6 +18,6 @@ const deleteReview = async (req, res) => {
   await Listing.findByIdAndUpdate(id, { $pull: { reviews: reviewId } });
   await Review.findByIdAndDelete(reviewId);
   req.flash("success", "Review Deleted!");
-  res.redirect(`/listings/${id}`);
+  res.redirect(`/venues/${id}`);
 };
 export default { createReview, deleteReview };

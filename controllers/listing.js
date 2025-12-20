@@ -64,7 +64,7 @@ const newListing = async (req, res) => {
   newList.geometry = response.body.features[0].geometry;
   await newList.save();
   req.flash("success", "New Venue Added!");
-  res.redirect("/listings");
+  res.redirect("/venues");
 };
 
 const editListingForm = async (req, res) => {
@@ -73,7 +73,7 @@ const editListingForm = async (req, res) => {
   console.log(list.category);
   if (!list) {
     req.flash("error", "Venue you requested for, does not exist!");
-    res.redirect("/listings");
+    res.redirect("/venues");
   } else {
     let orgImgUrl = list.image.url;
     orgImgUrl = orgImgUrl.replace("/upload", "/upload/h_200,w_250");
@@ -95,14 +95,14 @@ const updateListing = async (req, res) => {
   }
   req.flash("success", "Venue updated!");
   // res.render("listings/list.ejs", { list });
-  res.redirect(`/listings/${list._id}`);
+  res.redirect(`/venues/${list._id}`);
 };
 
 const destroyListing = async (req, res) => {
   let { id } = req.params;
   await Listing.findByIdAndDelete(id);
   req.flash("success", "Venue Deleted!");
-  res.redirect("/listings");
+  res.redirect("/venues");
 };
 
 export default {

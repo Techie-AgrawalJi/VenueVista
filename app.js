@@ -111,15 +111,16 @@ app.use((req, res, next) => {
 //   let registeredUser = await User.register(fakeUser, "helloJay"); // register- static method which takes user, password and callback as arguments but here we have not passed cb, it will auto check unique username is DB.
 //   res.send(registeredUser);
 // });
+
 // get all listings
 app.get("/", (req, res) => {
-  res.redirect("/listings");
+  res.redirect("/venues");
 });
 
-app.use("/listings", listingRouter);
+app.use("/venues", listingRouter);
 
 // Reviews
-app.use("/listings/:id/reviews", reviewRouter);
+app.use("/venues/:id/reviews", reviewRouter);
 
 app.use("/", userRouter);
 

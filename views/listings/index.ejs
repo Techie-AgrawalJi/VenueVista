@@ -75,7 +75,7 @@
   <div class="row">
     <div class="listings-container">
       <% for (const list of lists) { %>
-        <a href="/listings/<%= list._id %>">
+        <a href="/venues/<%= list._id %>">
           <div class="card listing-card" style="width: 12rem">
             <img src="<%= list.image.url %>" class="card-img-top" alt="image" style="height: 12rem" />
             <div class="card-body">
@@ -135,7 +135,7 @@
     document.querySelectorAll(".filter").forEach(filter => {
       filter.addEventListener("click", () => {
         const category = filter.dataset.category;
-        window.location.href = `/listings?category=${category}`;
+        window.location.href = `/venues?category=${category}`;
       });
     });
 
@@ -146,7 +146,7 @@
 
       const location = inp.value.trim();
       // if (!location) return;
-      window.location.href = `/listings?location=${location}`
+      window.location.href = `/venues?location=${location}`
     })
 
   </script>

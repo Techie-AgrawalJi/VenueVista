@@ -1,9 +1,5 @@
 import express from "express";
 import { wrapAsync } from "../utils/wrapAsync.js";
-import { reviewSchema } from "../schema.js";
-import { ExpressError } from "../utils/expressError.js";
-import { Review } from "../models/review.js";
-import { Listing } from "../models/listing.js";
 import { isLoggedIn, validateReview, isReviewAuthor } from "../middleware.js";
 import reviewController from "../controllers/review.js";
 
