@@ -46,3 +46,7 @@
   text-align: center;
   margin-bottom: 10px;
 }
+
+.review-form-inner > textarea {
+  background-color: #c3f6f8;
+}

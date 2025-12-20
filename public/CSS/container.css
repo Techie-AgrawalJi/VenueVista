@@ -90,31 +90,6 @@
   background-color: #fafafa;
 }
 
-.select select {
-  margin-top: 5px;
-  padding: 8px 12px;
-  font-size: 15px;
-
-  border-radius: 5px;
-  cursor: pointer;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-
-.select select:hover {
-  border: 1px solid #201f1f;
-}
-
-.select select:focus {
-  outline: none;
-  border-color: #060606;
-}
-
-.select select option {
-  padding: 8px;
-}
-
 .login-main {
   border: 5px solid rgb(136, 219, 222);
   background-color: white;
