@@ -3,3 +3,8 @@
   transform: scale3d(1.02, 1.02, 1.02);
   transition: all 0 ease-in allow-discrete;
 }
+
+.textShadow {
+  text-shadow: 1px 1px 0 #94e4e0, 2px 2px 0 #5aa4a9, 3px 3px 0 #336866,
+    5px 5px 10px rgba(0, 0, 0, 0.6);
+}

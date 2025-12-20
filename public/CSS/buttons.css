@@ -1,0 +1,63 @@
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.btn-dark,
+.btn-outline {
+  min-width: 110px;
+  text-align: center;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  box-shadow: 0 4px 10px rgba(77, 187, 202, 0.826);
+}
+.btn-outline {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.btn-dark {
+  background: linear-gradient(145deg, #1d5d5f, #189fb1);
+  color: #fff;
+  text-decoration: none;
+  border: none;
+}
+
+.btn-dark:hover {
+  background: linear-gradient(145deg, #12505a, #067da1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(77, 187, 202, 0.826);
+}
+
+.btn-dark:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 10px rgba(77, 187, 202, 0.826);
+}
+
+.btn-outline {
+  background: #fff;
+  border: 2px solid #0a6968;
+  color: #11757a;
+  font-size: 18px;
+}
+
+.btn-outline:hover {
+  background: rgb(40, 124, 129);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(77, 187, 202, 0.826);
+}
+
+.btn-small {
+  padding: 7px 14px;
+  font-size: 0.9rem;
+}

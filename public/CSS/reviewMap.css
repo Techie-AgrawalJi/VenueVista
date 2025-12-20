@@ -1,0 +1,48 @@
+.review-form {
+  margin: 30px 0;
+}
+
+.review-form-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.reviews-section {
+  margin: 30px 0;
+}
+
+.review-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.review-card {
+  flex: 1 1 45%;
+  border: 1.5px solid #ddd;
+  border-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: 0 3px 6px rgb(14, 216, 235);
+}
+
+#map {
+  border: 2px solid #147a96;
+  border-radius: 10px;
+  height: 400px;
+  width: 100%;
+  margin: 10px auto;
+  box-shadow: 0 4px 8px rgb(14, 216, 235);
+}
+
+.map-section h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}

@@ -38,7 +38,7 @@ const showListing = async (req, res) => {
     })
     .populate("owner");
   if (!list) {
-    req.flash("error", "Listing you requested for does not exist!");
+    req.flash("error", "Venue you requested for does not exist!");
     res.redirect("/listings");
   } else res.render("listings/list.ejs", { list });
 };
@@ -52,7 +52,7 @@ const newListing = async (req, res) => {
     .send();
 
   if (!req.body) {
-    throw new ExpressError(400, "send valid data for listing");
+    throw new ExpressError(400, "send valid data for Venue");
   }
   let url = req.file.path;
   let filename = req.file.filename;
@@ -63,7 +63,7 @@ const newListing = async (req, res) => {
   newList.image = { url, filename };
   newList.geometry = response.body.features[0].geometry;
   await newList.save();
-  req.flash("success", "New listing Created!");
+  req.flash("success", "New Venue Added!");
   res.redirect("/listings");
 };
 
@@ -72,12 +72,12 @@ const editListingForm = async (req, res) => {
   let list = await Listing.findById(id);
   console.log(list.category);
   if (!list) {
-    req.flash("error", "Listing you requested for does not exist!");
+    req.flash("error", "Venue you requested for, does not exist!");
     res.redirect("/listings");
   } else {
     let orgImgUrl = list.image.url;
     orgImgUrl = orgImgUrl.replace("/upload", "/upload/h_200,w_250");
-    req.flash("success", "Listing edited!");
+    req.flash("success", "Venue edited!");
     res.render("listings/edit.ejs", { list, orgImgUrl });
   }
 };
@@ -93,7 +93,7 @@ const updateListing = async (req, res) => {
     list.image = { url, filename };
     await list.save();
   }
-  req.flash("success", "Listing updated!");
+  req.flash("success", "Venue updated!");
   // res.render("listings/list.ejs", { list });
   res.redirect(`/listings/${list._id}`);
 };
@@ -101,7 +101,7 @@ const updateListing = async (req, res) => {
 const destroyListing = async (req, res) => {
   let { id } = req.params;
   await Listing.findByIdAndDelete(id);
-  req.flash("success", "Listing Deleted!");
+  req.flash("success", "Venue Deleted!");
   res.redirect("/listings");
 };
 

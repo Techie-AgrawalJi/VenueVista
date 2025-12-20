@@ -12,7 +12,7 @@ const signup = async (req, res) => {
     // console.log(registeredUser);
     req.login(registeredUser, (err) => {
       if (err) return next();
-      req.flash("success", "Welcome to WanderLust");
+      req.flash("success", "Welcome to VenueVista");
       res.redirect("/listings");
     });
   } catch (error) {
@@ -27,7 +27,7 @@ const loginForm = (Req, res) => {
 
 const login = (req, res) => {
   let { username } = req.body;
-  req.flash("success", `Welcome to WanderLust, ${username}`);
+  req.flash("success", ` ${username}, Welcome to VenueVista`);
   // if we directly request for ogin page then in that case  redirectUrl is not saved because isLoggedIn middleware is not triggerred which stores undefined and page not found error occurs
   let redirectUrl = res.locals.redirectUrl || "/listings";
   res.redirect(redirectUrl);

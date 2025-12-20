@@ -1,0 +1,152 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: #609a9d;
+}
+.container {
+  flex: 1;
+}
+.navbar {
+  background-color: #fff !important;
+  transition: background-color 0.3s ease-in-out;
+  z-index: 1030;
+  height: 60px;
+}
+
+.navbar-collapse {
+  background-color: #ffffff !important;
+}
+
+.navbar.show,
+.navbar-collapse.show {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  color: #000 !important;
+}
+
+.home {
+  padding-left: 10px;
+  text-decoration: none;
+  color: black;
+}
+.home:hover {
+  font-weight: 500;
+}
+
+.f-info {
+  height: 4rem;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.f-info-socials {
+  font-size: 1.3rem;
+  display: flex;
+  gap: 10px;
+}
+.f-info-socials i:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+  transition: all 100ms ease-in;
+}
+.f-info-links {
+  display: flex;
+  gap: 10px;
+}
+.f-info-links a {
+  text-decoration: none;
+  color: black;
+}
+.projectName:hover {
+  color: rgb(65, 124, 141);
+  /* font-weight: 500; */
+  cursor: pointer;
+}
+.f-info-links a:hover {
+  color: rgb(15, 82, 101);
+}
+
+.more {
+  text-align: center;
+}
+
+.note {
+  max-width: 70vw;
+  margin: 0 auto;
+  color: rgb(116, 11, 11);
+  text-align: center;
+  font-weight: 500;
+}
+
+.btn-search {
+  background-color: #3a9297;
+  color: white;
+  border-radius: 25px;
+  padding: 0 1rem 0 1 rem;
+}
+.btn-search:hover {
+  background-color: #48b5bb;
+  color: white;
+}
+
+.btn-search i {
+  display: inline;
+  margin-right: 0.5rem;
+}
+
+.search-inp {
+  border-radius: 25px;
+  font-size: 1rem;
+  border: 1px solid rgb(103, 228, 230);
+}
+
+.search-inp:hover {
+  border: 2px solid #3a9297;
+}
+
+#filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px 20px;
+  margin: 0 auto;
+  margin-top: 10px;
+  position: sticky;
+  top: 60px;
+  z-index: 1000;
+  overflow: hidden;
+  height: 70px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 8px 12px;
+  background-color: #fafafa;
+}
+
+.filter-types {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 25px;
+  padding-top: 10px;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.filter {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 13px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.filter:hover {
+  color: #3a9297;
+}
