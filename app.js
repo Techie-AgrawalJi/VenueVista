@@ -24,6 +24,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 const dbUrl = process.env.ATLASDB_URL;
 
@@ -35,7 +36,8 @@ const store = mongoStore.create({
   touchAfter: 24 * 3600,
 });
 
-store.on("error", () => {
+
+store.on("error", (err) => {
   console.log("error in mongo Store ", err);
 });
 const sessionOptions = {
@@ -46,13 +48,15 @@ const sessionOptions = {
   cookie: {
     expires: Date.now() + 3 * 24 * 60 * 60 * 1000,
     maxAge: 3 * 24 * 60 * 60 * 1000,
+    httpOnly: true, // used for security purposes
+    secure: process.env.NODE_ENV === "production",
   },
-  httpOnly: true, // used for security purposes
 };
 
 app.locals.mapboxToken = process.env.MAPBOX_TOKEN;
 
 // const flash = connectFlash();
+app.set("trust proxy", 1);
 app.use(session(sessionOptions));
 app.use(flash());
 
@@ -71,7 +75,7 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methOver("_method"));
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("server is listening");
 });
 // const mongoUrl = "mongodb://127.0.0.1:27017/wanderLust";
