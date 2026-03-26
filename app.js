@@ -24,10 +24,8 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 const dbUrl = process.env.ATLASDB_URL;
-let isConnected = false;
 
 const store = mongoStore.create({
   mongoUrl: dbUrl,
@@ -37,8 +35,7 @@ const store = mongoStore.create({
   touchAfter: 24 * 3600,
 });
 
-
-store.on("error", (err) => {
+store.on("error", () => {
   console.log("error in mongo Store ", err);
 });
 const sessionOptions = {
@@ -49,15 +46,13 @@ const sessionOptions = {
   cookie: {
     expires: Date.now() + 3 * 24 * 60 * 60 * 1000,
     maxAge: 3 * 24 * 60 * 60 * 1000,
-    httpOnly: true, // used for security purposes
-    secure: process.env.NODE_ENV === "production",
   },
+  httpOnly: true, // used for security purposes
 };
 
 app.locals.mapboxToken = process.env.MAPBOX_TOKEN;
 
 // const flash = connectFlash();
-app.set("trust proxy", 1);
 app.use(session(sessionOptions));
 app.use(flash());
 
@@ -76,21 +71,22 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methOver("_method"));
 
-async function connectDB() {
-  if (isConnected) return;
+app.listen(3000, () => {
+  console.log("server is listening");
+});
+// const mongoUrl = "mongodb://127.0.0.1:27017/wanderLust";
+
+async function main() {
   await mongoose.connect(dbUrl);
-  isConnected = true;
-  console.log("successful execution");
 }
 
-app.use(async (req, res, next) => {
-  try {
-    await connectDB();
-    next();
-  } catch (err) {
-    next(err);
-  }
-});
+main()
+  .then(() => {
+    console.log("successful execution");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // phase 1 part a,b,c beginning
 
@@ -154,11 +150,3 @@ app.use((err, req, res, next) => {
 // });
 
 // Phase 1 part a,b,c ends here...
-
-export default app;
-
-if (process.env.NODE_ENV !== "production") {
-  app.listen(port, () => {
-    console.log(`server is listening on ${port}`);
-  });
-}
