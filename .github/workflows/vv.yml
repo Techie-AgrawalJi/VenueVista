@@ -28,6 +28,6 @@ jobs:
         run: npm ci
 
       - name: restart app
-        run: pm2 start npm --name mainApp -- start 
+        run: pm2 start npm --name mainApp -- start || pm2 restart mainApp
              pm2 save
 
