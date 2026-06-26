@@ -120,7 +120,7 @@ app.get("/", (req, res) => {
   res.redirect("/venues");
 });
 
-app.get("/test", (req, res) => {
+app.get("/test", async (req, res) => {
   res.json({
     msg: "test message",
   });
