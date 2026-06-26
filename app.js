@@ -75,6 +75,14 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(methOver("_method"));
 
+// middleware for storing results - moved BEFORE db connection to ensure currUser is always available
+app.use((req, res, next) => {
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  res.locals.currUser = req.user; // we have created here because req.user can not be accessed intp ejs file directly but locals can be accessed
+  next();
+});
+
 async function connectDB() {
   if (isConnected) return;
   await mongoose.connect(dbUrl);
@@ -97,14 +105,6 @@ app.use(async (req, res, next) => {
 //   res.send("Server is working well.");
 // });
 
-// middleware for storing results
-app.use((req, res, next) => {
-  res.locals.success = req.flash("success");
-  res.locals.error = req.flash("error");
-  res.locals.currUser = req.user; // we have created here because req.user can not be accessed intp ejs file directly but locals can be accessed
-  next();
-});
-
 // app.get("/demoUser", async (req, res) => {
 //   let fakeUser = new User({
 //     email: "jay123@gmail.com",
@@ -120,10 +120,17 @@ app.get("/", (req, res) => {
   res.redirect("/venues");
 });
 
+app.get("/test", (req, res) => {
+  res.json({
+    msg: "test message",
+  });
+});
+
 app.use("/venues", listingRouter);
 
 // Reviews
 app.use("/venues/:id/reviews", reviewRouter);
+
 
 app.use("/", userRouter);
 
