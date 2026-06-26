@@ -27,3 +27,7 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
+      - name: restart app
+        run: pm2 start npm --name mainApp -- start 
+             pm2 save
+
