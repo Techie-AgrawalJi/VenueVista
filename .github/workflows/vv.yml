@@ -15,8 +15,16 @@ jobs:
         node-version: [22.x]
 
     steps:
+      - name: backup .env
+        run: |
+          if [-f .env]; then mv .env /temp/env_backup; fi
+          
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: backup .env
+        run: |
+          if [-f /temp/env_backup]; then mv /temp/env_backup .env; fi
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
