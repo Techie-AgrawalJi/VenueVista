@@ -20,7 +20,6 @@ import LocalStrategy from "passport-local";
 import User from "./models/user.js";
 
 // console.log(process.env.CLOUD_SECRET);
-console.log("=== NEW APP.JS LOADED ===");
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -28,7 +27,6 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 app.get("/test", async (req, res) => {
-  console.log("TEST ROUTE HIT");
   res.json({
     msg: "test message",
   });
@@ -168,9 +166,6 @@ app.use((err, req, res, next) => {
 
 // Phase 1 part a,b,c ends here...
 
-import listEndpoints from "express-list-endpoints";
-
-console.log(listEndpoints(app));
 
 export default app;
 
