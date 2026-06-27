@@ -5,7 +5,7 @@ const mapToken = process.env.MAPBOX_TOKEN;
 // console.log(mapToken);
 
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
-2
+
 const Listings = async (req, res) => {
   const { category, location } = req.query;
   let allListings;
