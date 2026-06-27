@@ -168,6 +168,10 @@ app.use((err, req, res, next) => {
 
 // Phase 1 part a,b,c ends here...
 
+import listEndpoints from "express-list-endpoints";
+
+console.log(listEndpoints(app));
+
 export default app;
 
 if (process.env.NODE_ENV !== "production") {
