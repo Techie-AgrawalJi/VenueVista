@@ -1,5 +1,6 @@
 import { Listing } from "../models/listing.js";
 import 'dotenv/config';   
+
 import mbxGeocoding from "@mapbox/mapbox-sdk/services/geocoding.js";
 const mapToken = process.env.MAPBOX_TOKEN;
 // console.log(mapToken);
