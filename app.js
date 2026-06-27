@@ -26,6 +26,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
+
+app.get("/test", async (req, res) => {
+  console.log("TEST ROUTE HIT");
+  res.json({
+    msg: "test message",
+  });
+});
+
 const port = process.env.PORT || 3000;
 
 const dbUrl = process.env.ATLASDB_URL;
@@ -118,12 +126,7 @@ app.use(async (req, res, next) => {
 // });
 
 // get all listings
-app.get("/test", async (req, res) => {
-  console.log("TEST ROUTE HIT");
-  res.json({
-    msg: "test message",
-  });
-});
+
 
 app.get("/", (req, res) => {
   res.redirect("/venues");
