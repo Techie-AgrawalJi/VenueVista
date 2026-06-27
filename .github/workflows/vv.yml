@@ -35,7 +35,11 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      - name: restart app
-        run: pm2 start npm --name mainApp -- start || pm2 restart mainApp
-             pm2 save
+      - name: Restart application
+        run: |
+          pm2 describe mainApp >/dev/null \
+           && pm2 restart mainApp --update-env \
+           || pm2 start npm --name mainApp -- start
+          
+          pm2 save
 
