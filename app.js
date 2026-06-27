@@ -20,6 +20,7 @@ import LocalStrategy from "passport-local";
 import User from "./models/user.js";
 
 // console.log(process.env.CLOUD_SECRET);
+console.log("=== NEW APP.JS LOADED ===");
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -118,6 +119,7 @@ app.use(async (req, res, next) => {
 
 // get all listings
 app.get("/test", async (req, res) => {
+  console.log("TEST ROUTE HIT");
   res.json({
     msg: "test message",
   });
