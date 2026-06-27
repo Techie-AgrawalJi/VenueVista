@@ -22,7 +22,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: backup .env
+      - name: restore .env
         run: |
           if [ -f /temp/env_backup]; then mv /temp/env_backup .env; fi
 
