@@ -17,14 +17,14 @@ jobs:
     steps:
       - name: backup .env
         run: |
-          if [ -f .env ]; then mv .env /temp/env_backup; fi
+          if [ -f .env ]; then mv .env /tmp/env_backup; fi
           
       - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: restore .env
         run: |
-          if [ -f /temp/env_backup ]; then mv /temp/env_backup .env; fi
+          if [ -f /tmp/env_backup ]; then mv /tmp/env_backup .env; fi
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
